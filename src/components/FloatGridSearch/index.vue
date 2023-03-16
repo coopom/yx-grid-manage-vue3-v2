@@ -36,7 +36,11 @@ import {
     PolylineFlowMaterialProperty,
     PolylineTrailMaterialProperty,
     PolylineLightingMaterialProperty
-} from "@/utils/Cesium"
+} from "@/utils/Cesium";
+
+import { useHumanStore } from "@/store/modules"
+
+const humanStore = useHumanStore();
 
 let viewer = null;
 const collapse = ref(true);
@@ -102,9 +106,8 @@ const parse2EntityOptions = (data) => {
                 material: new PolylineLightingMaterialProperty({
                     // color: Cesium.Color.YELLOW,
                     color: Cesium.Color.fromCssColorString("#11a1ba"),
-                    width: 10,
                 }),
-                width: 20,
+                width: 50,
                 clampToGround: true
             },
             properties: rest
@@ -128,12 +131,22 @@ const draw = async (viewer, options) => {
     viewer.flyTo(dataSource);
 }
 
+const updateNum = async (data) => {
+    window.currRegion = data;
+    // const num = await Grid.GetUserNum(params);
+    // window.currRegion = data;
+    // window.griderNum = num;
+    // humanStore.griderNum = num;
+    // console.log("111data:", num);
+}
+
 const beforeDraw = async (data, query) => {
     const res = await Get(query ?? {
         parentCode: data.areaCode,
         areaType: data.areaType + 1
     });
-    console.log("draw res:", data, res);
+    // console.log("draw res:", data);
+    window.currRegion = toRaw(data ?? query);
     // const geojson = parse2GeoJSON(res);
     const options = parse2EntityOptions(res);
 
@@ -145,6 +158,10 @@ const beforeDraw = async (data, query) => {
             draw(window.viewer, options);
         })
     }
+
+    // const currRegion = res.find(item => item.areaCode === (data?.areaCode ?? query.areaCode));
+    // console.log("currRegion:", res, data);
+    // updateNum(currRegion);
 }
 
 const addLevels = (data) => {
@@ -211,6 +228,7 @@ onMounted(() => {
     box-shadow: inset 0px 0px 4px 1px #2979ff;
     border-radius: 20px;
     overflow: hidden;
+    top: 300px;
 
     &-inner {
         width: 100%;

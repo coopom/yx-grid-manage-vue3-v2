@@ -2,7 +2,8 @@
     <div class="yx-thing-ai">
         <div class="yx-thi">
             <div class="yx-thi-routes">
-                <div @click="handleClick(item)" :class="{selected: route.path === item.path}" v-for="item in routes" class="yx-thi-route">
+                <div @click="handleClick(item)" :class="{ selected: route.path === item.path }"
+                    v-for="item in routes" class="yx-thi-route">
                     {{ item.title }}
                 </div>
             </div>
@@ -13,24 +14,25 @@
 
 <script setup>
 import { reactive, computed } from "vue"
-import { useRoute } from "vue-router"
+import { useRoute, useRouter } from "vue-router"
 
 const route = useRoute();
+const router = useRouter();
 
 const list = reactive([
     {
         path: "/thing/ai/idex",
         title: "宝安区",
         paths: [
+            "/thing/ai/idex/incidents",
             "/thing/ai/idex"
         ]
     },
     {
-        path: "thing/ai/incidents",
+        path: "/thing/ai/idex/incidents",
         title: "事件列表",
         paths: [
-            "/thing/ai/idex",
-            "/thing/ai/incidents"
+            "/thing/ai/idex/incidents",
         ]
     }
 ]);
@@ -40,7 +42,10 @@ const routes = computed(() => {
 })
 
 const handleClick = (item) => {
-    
+    router.push({
+        path: item.path,
+        query: route.query
+    })
 }
 
 </script>
@@ -50,6 +55,7 @@ const handleClick = (item) => {
     position: absolute;
     transform: translateY(-100%);
     left: -33px;
+
     &-routes {
         display: flex;
     }

@@ -1,0 +1,93 @@
+.bx-popup-ctn {
+    /* background: rgba(0, 9, 45, 0.90);
+    border: 1px solid rgba(84, 181, 255, 0.8); */
+    position: absolute;
+    z-index: 999;
+}
+
+.yx-grider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 926px;
+    height: 490px;
+    background: center url(./popup_02.png) no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    z-index: 9999999;
+    transform: translate(calc(-50% + 26px), -110%);
+}
+
+.yx-grider-inner {
+    padding: 79px 14px 0 14px;
+    box-sizing: border-box;
+}
+
+.yx-grider-hd {
+    padding: 0 0 0 37px;
+    box-sizing: border-box;
+    display: flex;
+    padding-bottom: 37px;
+    border-bottom: 1px solid rgba(21, 97, 234, 1);
+    /* border-bottom: 1px solid red; */
+}
+
+.yx-grider-avatar {
+    width: 180px;
+    height: 237px;
+    background: blue;
+    margin-right: 22px;
+}
+
+.yx-grider-props {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.yx-grider-prop {
+    color: #fff;
+    display: flex;
+}
+
+.yx-grider-prop-key {
+    height: 56px;
+    font-size: 42px;
+    font-family: MicrosoftYaHei;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 56px;
+    white-space: nowrap;
+}
+
+.yx-grider-prop-value {
+    height: 56px;
+    font-size: 42px;
+    font-family: MicrosoftYaHei;
+    color: #FFFFFF;
+    line-height: 56px;
+    white-space: nowrap;
+}
+
+.yx-grider-bd {
+    padding-top: 22px;
+}
+
+.yx-grider-actions {
+    display: flex;
+}
+
+.yx-grider-action {
+    flex: 1;
+    text-align: center;
+    height: 56px;
+    font-size: 42px;
+    font-family: MicrosoftYaHei;
+    color: #FFFFFF;
+    line-height: 56px;
+    cursor: pointer;
+}
+
+.yx-grider-action .iconfont {
+    font-size: 42px;
+    margin-right: 14px;
+}
