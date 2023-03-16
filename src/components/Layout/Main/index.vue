@@ -11,5 +11,6 @@
     border: 10px solid green;
     height: 1118px;
     box-sizing: border-box;
+    pointer-events: all;
 }
 </style>
