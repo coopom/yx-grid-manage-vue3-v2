@@ -1,6 +1,6 @@
 <template>
     <div class="yx-layout">
-        <Viewer />
+        <!-- <Viewer /> -->
         <div class="yx-layout-inner">
             <FloatMenu />
             <Main />
@@ -26,7 +26,7 @@ const data = reactive({
     &-inner {
         position: absolute;
         left: 0;
-        top: 0;
+        top: 300px;
         bottom: 0;
         right: 0;
         pointer-events: none;

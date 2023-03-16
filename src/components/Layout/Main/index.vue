@@ -8,7 +8,6 @@
 
 <style lang="scss" scoped>
 @include yx(layout-main) {
-    border: 10px solid green;
     height: 1118px;
     box-sizing: border-box;
     pointer-events: all;

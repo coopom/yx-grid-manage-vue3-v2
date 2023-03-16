@@ -104,26 +104,28 @@ const routes = [
           { path: 'smart', component: () => import('@/views/Overview/Smart') },
           { path: 'law', component: () => import('@/views/Overview/Law') }
         ]
-      }
-    ]
-  },
-  {
-    path: '/human',
-    component: () => import('@/views/Human'),
-    redirect: '/human/grider',
-    children: [
+      },
       {
-        path: 'grider',
-        component: () => import('@/views/Human/Grider'),
-        redirect: '/human/grider/idex',
+        path: '/human',
+        component: () => import('@/views/Human'),
+        redirect: '/human/grider',
         children: [
-          { path: 'idex', component: () => import('@/views/Human/Grider/Idex') },
-          { path: 'user', component: () => import('@/views/Human/Grider/User') }
+          {
+            path: 'grider',
+            component: () => import('@/views/Human/Grider'),
+            redirect: '/human/grider/idex',
+            children: [
+              { path: 'idex', component: () => import('@/views/Human/Grider/Idex') },
+              { path: 'media', component: () => import('@/views/Human/Grider/Media') },
+              { path: 'uav', component: () => import('@/views/Human/Grider/UAV') },
+            ]
+          },
         ]
       },
+      { path: '/objects', component: () => import('@/views/Objects') },
     ]
   },
-  { path: '/objects', component: () => import('@/views/Objects') },
+
 ]
 
 const router = createRouter({

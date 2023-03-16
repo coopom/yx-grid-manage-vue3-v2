@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-import Main from "../Layout/Main";
 import PriMenu from "./PriMenu";
 
 const menus = [
@@ -44,9 +43,9 @@ const menus = [
         icon: "",
         path: "/human",
         children: [
-            { title: "网格员巡查", icon: "icon-wanggeyuanxuncha", path: "/human/grider", },
-            { title: "视频AI巡查", icon: "icon-shipinAIxuncha", path: "/human/media", },
-            { title: "无人机AI巡查", icon: "icon-wurenji", path: "/human/uav", },
+            { title: "网格员巡查", icon: "icon-wanggeyuanxuncha", path: "/human/grider/idex", },
+            { title: "视频AI巡查", icon: "icon-shipinAIxuncha", path: "/human/grider/media", },
+            { title: "无人机AI巡查", icon: "icon-wurenji", path: "/human/grider/uav", },
         ]
     },
     {
@@ -69,9 +68,10 @@ const menus = [
     height: 1118px;
     background: left center url(@/assets/images/menu_bg.png) no-repeat;
     background-size: 100% 100%;
-    border: 1px solid red;
     box-sizing: border-box;
     display: flex;
     pointer-events: all;
+    flex-shrink: 0;
+    margin-right: -100px;
 }
 </style>
