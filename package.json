@@ -1,0 +1,41 @@
+{
+  "name": "yx-grid-manage-vue3-v2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@ft-cim/cim-js": "http://10.97.36.11:9099/artifactory/npm-local/%40ft-cim/cim-js-1.2.0.tgz",
+    "@ft-cim/cim-vue": "http://10.97.36.11:9099/artifactory/npm-local/%40ft-cim/cim-vue-1.2.0.tgz",
+    "axios": "^1.3.4",
+    "crypto-js": "^4.1.1",
+    "element-plus": "^2.3.0",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.33",
+    "store2": "^2.14.2",
+    "v-scale-screen": "^2.2.0",
+    "video.js": "^8.0.4",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6",
+    "vue3-video-play": "^1.3.1-beta.6",
+    "wkt": "^0.1.1"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "prettier": "^2.8.4",
+    "sass": "^1.59.3",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.1.4",
+    "vite-plugin-html": "^3.2.0"
+  }
+}

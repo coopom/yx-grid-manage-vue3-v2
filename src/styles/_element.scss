@@ -1,0 +1,85 @@
+:root {
+    --el-text-color-regular: #fff !important;
+    --el-component-size-large: 3.6cqh !important;
+    --el-border-width: 10px !important;
+    --el-border-color: #00BFF7 !important;
+    --el-border-radius-base: 2px !important;
+
+    // --el-font-size-extra-large: 20px !important;
+    // --el-font-size-large: 18px !important;
+    // --el-font-size-medium: 16px !important;
+    // --el-font-size-base: 2.8cqh !important;
+    // --el-font-size-small: 13px !important;
+    // --el-font-size-extra-small: 12px!important;
+    --el-text-color-placeholder: #fff !important;
+    --el-bg-color-overlay: #02357e !important;
+    --el-border-color-light: #00BFF7 !important;
+
+    --el-fill-color-light: #0880df !important;
+    --el-font-size-base: 2.2cqh !important;
+    --el-select-font-size: 2.2cqh !important;
+    // --el-fill-color-lighter: #000 !important;
+    // --el-fill-color-extra-light: #fafcff;
+    // --el-fill-color-dark: #ebedf0;
+    // --el-fill-color-darker: #e6e8eb;
+    // --el-fill-color-blank: #ffffff;
+
+    --el-border-color-lighter: #2979FF !important;
+}
+
+.el-select-dropdown__item {
+    padding: 0.4cqh 1cqh !important;
+    height: auto !important;
+}
+
+.el-select-dropdown__empty {
+    padding: 3cqh 1cqh !important;
+    height: auto !important;
+}
+
+.el-select-dropdown__item.selected {
+    color: #fff !important;
+}
+
+.el-picker__popper.el-popper {
+    border: 0.1cqh solid var(--el-datepicker-border-color) !important;
+}
+
+.el-picker__popper.el-popper .el-popper__arrow::before {
+    border: 0.1cqh solid var(--el-datepicker-border-color) !important;
+}
+
+.el-select__popper.el-popper {
+    border: 0.2cqh solid var(--el-border-color-light) !important;
+}
+
+.el-select__popper.el-popper .el-popper__arrow::before {
+    border: 0.2cqh solid var(--el-border-color-light) !important;
+}
+
+.el-picker__popper {
+    transform: scale(1.8) !important;
+    transform-origin: top;
+}
+
+.el-image-viewer {
+    &__wrapper {
+
+    }
+    &__close {
+        color: #000 !important;
+    }
+    &__actions {
+        &__inner {
+            color: #000 !important;
+        }
+    }
+}
+
+.el-popper {
+    pointer-events: all;
+}
+
+.el-date-picker {
+    --el-datepicker-icon-color: #fff !important;
+}
