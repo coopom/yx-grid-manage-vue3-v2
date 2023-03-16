@@ -123,6 +123,22 @@ const routes = [
         ]
       },
       { path: '/objects', component: () => import('@/views/Objects') },
+      {
+        path: '/thing',
+        component: () => import('@/views/Thing'),
+        redirect: '/thing/ai',
+        children: [
+          {
+            path: '/thing/ai',
+            component: () => import('@/views/Thing/AI'),
+            redirect: '/thing/ai/idex',
+            children: [
+              { path: "/thing/ai/idex", component: () => import('@/views/Thing/AI/Idex') },
+              { path: "/thing/ai/incidents", component: () => import('@/views/Thing/AI/Incidents') }
+            ]
+          },
+        ]
+      },
     ]
   },
 

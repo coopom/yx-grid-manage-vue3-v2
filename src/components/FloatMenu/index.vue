@@ -55,7 +55,7 @@ const menus = [
         children: [
             { title: "事件上报统计", icon: "", path: "/thing/report" },
             { title: "事件类别统计", icon: "", path: "/thing/cate" },
-            { title: "视频AI事件", icon: "", path: "/thing/ai" },
+            { title: "视频AI事件", icon: "", path: "/thing/ai/idex" },
         ]
     },
 ]

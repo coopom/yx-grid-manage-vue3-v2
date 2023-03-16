@@ -32,6 +32,15 @@ class Incident {
         return request.get(`http://10.99.16.88:8380/cim_bs/getFlowAtt`, { params })
     }
 
+    /**
+     * @param {*} params 
+     * // params.in_date
+     * @returns 
+     */
+    static GetAIList(params) {
+        return request.get(`http://10.99.16.88:8380/cim_flow/getCaseSum`, { params })
+    }
+
 }
 
 export default Incident;

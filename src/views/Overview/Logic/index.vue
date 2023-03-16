@@ -1,6 +1,10 @@
 <template>
     <div class="yx-overview-logic">
-        <img :src="Img" />
+        <div class="yx-overview-logic-inner">
+            <div class="yx-overview-logic-scroll">
+                <img :src="Img" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -17,9 +21,22 @@ import Img from "@/assets/images/overview_logic.png"
     overflow: auto;
     box-sizing: border-box;
     padding: 22px 22px 20px 130px;
-    img {
-        width: 2765px;
-        max-width: 2765px;
+
+    &-inner {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &-scroll {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+
+        img {
+            width: 2765px;
+            max-width: 2765px;
+        }
     }
 }
 </style>

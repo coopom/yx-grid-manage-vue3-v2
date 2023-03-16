@@ -91,6 +91,7 @@ onMounted(() => {
     &-item {
         flex: 1;
         width: 100%;
+        cursor: pointer;
 
         &-inner {
             width: 100%;

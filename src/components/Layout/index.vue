@@ -1,8 +1,10 @@
 <template>
     <div class="yx-layout">
-        <!-- <Viewer /> -->
+        <Viewer />
         <div class="yx-layout-inner">
             <FloatMenu />
+            <FloatStats />
+            <FloatGridSearch />
             <Main />
         </div>
     </div>
@@ -12,6 +14,8 @@
 import Viewer from "@/components/Viewer"
 import FloatMenu from "@/components/FloatMenu";
 import Main from "./Main";
+import FloatStats from "@/components/FloatStats"
+import FloatGridSearch from "@/components/FloatGridSearch"
 import { ref, reactive, onMounted, defineEmits } from 'vue';
 const data = reactive({
     isShowFloatStats: true,
@@ -23,6 +27,7 @@ const data = reactive({
 @include yx(layout) {
     @extend .fill-size;
     position: relative;
+
     &-inner {
         position: absolute;
         left: 0;

@@ -26,7 +26,34 @@ onMounted(() => {
 
         scene.$on(CIM_SCENE_EVENTS.LOAD_END_EVENT, () => {
             const viewer = window.viewer = window._sf3d.viewer
+            initEvents(viewer);
         })
+
+        const initEvents = (viewer) => {
+            initClickEvent(viewer);
+        }
+
+        const initClickEvent = (viewer) => {
+            const scene = viewer.scene
+            const time = Cesium.JulianDate.now()
+            const handler = new Cesium.ScreenSpaceEventHandler(viewer.canvas)
+            handler.setInputAction((e) => {
+                const pick = scene.pick(e.position);
+                if (pick) {
+                    const entity = pick.id
+                    if (entity) {
+                        const props = entity.properties.getValue(time);
+                        console.log('props:', props);
+                        // 1、如果点击拾取到实体信息，且实体信息包含 invoke 方法，就执行 invoke 方法
+                        if (props.invoke) {
+                            props.invoke();
+                        }
+
+                        // 2、
+                    }
+                }
+            }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
+        }
     }
 })
 
