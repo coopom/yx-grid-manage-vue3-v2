@@ -1,6 +1,6 @@
 <template>
     <div class="yx-layout-main">
-        <RouterView />
+        <RouterView/>
     </div>
 </template>
 
@@ -11,6 +11,5 @@
     height: 1118px;
     box-sizing: border-box;
     pointer-events: all;
-    position: relative;
 }
 </style>

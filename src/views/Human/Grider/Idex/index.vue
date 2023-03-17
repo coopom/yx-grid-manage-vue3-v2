@@ -1,6 +1,6 @@
 <template>
     <div class="yx-human-grider-idex">
-        <RouterView />
+        yx-human-grider-idex
     </div>
 </template>
 
@@ -8,6 +8,6 @@
 
 <style lang="scss" scoped>
 @include yx(human-grider-idex) {
-    
+
 }
 </style>

@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { reactive, computed, onMounted, watch } from "vue";
+import { reactive, computed, onMounted } from "vue";
 import { useRoute, useRouter, onBeforeRouteUpdate } from "vue-router";
 import SecMenu from "./SecMenu";
 
@@ -39,26 +39,14 @@ const handleClick = (item) => {
     router.push(item.path)
 }
 
-const initRoutes = () => {
-    for (const item of props.data) {
-        const d = item.children.find(c => route.path.startsWith(c.path));
-        if (d) {
+onMounted(() => {
+    for(const item of props.data) {
+        const d = item.children.find(c => c.path === route.path);
+        if(d) {
             data.selectedMenu = item;
         }
     }
-}
-
-onMounted(() => {
-    initRoutes();
-});
-
-watch(
-    () => route.path,
-    (newVal, oldVal) => {
-        initRoutes();
-    },
-    { deep: true }
-)
+})
 
 </script>
 
@@ -137,5 +125,4 @@ watch(
         box-sizing: border-box;
         padding: 11px 0;
     }
-}
-</style>
+}</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="yx-floatMenu-secMenu" :class="{ selected: route.path.startsWith(props.data.path) }">
+    <div class="yx-floatMenu-secMenu" :class="{ selected: route.path == props.data.path }">
         <div class="yx-floatMenu-secMenu-inner">
             <div v-if="props.data && props.data.title" class="yx-floatMenu-secMenu-item" @click="handleClick">
                 <div class="yx-floatMenu-secMenu-item-text">
@@ -78,17 +78,16 @@ const handleClick = () => {
 
 .yx-floatMenu-secMenu:nth-child(6):hover {
 
-    &:hover,
-    &.selected {
-        background: center url(@/assets/images/menu_btn_selected_06.png) no-repeat;
-        background-size: 100% 100%;
-    }
+&:hover,
+&.selected {
+    background: center url(@/assets/images/menu_btn_selected_06.png) no-repeat;
+    background-size: 100% 100%;
+}
 }
 
 
 .yx-floatMenu-secMenu:nth-child(1) .yx-floatMenu-secMenu-item {
     padding-left: 111px;
-
     &-text {
         .iconfont {
             margin-right: 41px;

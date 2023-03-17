@@ -115,17 +115,18 @@ const routes = [
             component: () => import('@/views/Human/Grider'),
             redirect: '/human/grider/idex',
             children: [
-              {
-                path: 'idex',
-                component: () => import('@/views/Human/Grider/Idex'),
-                redirect: '/human/grider/idex/info',
-                children: [
-                  { path: "info", component: () => import('@/views/Human/Grider/Idex/Info') },
-                  { path: "call", component: () => import('@/views/Human/Grider/Idex/Call') }
-                ]
-              },
+              { path: 'idex', component: () => import('@/views/Human/Grider/Idex') },
               { path: 'media', component: () => import('@/views/Human/Grider/Media') },
               { path: 'uav', component: () => import('@/views/Human/Grider/UAV') },
+            ]
+          },
+          {
+            path: 'media',
+            component: () => import('@/views/Human/Grider'),
+            redirect: '/human/media/incidents',
+            children: [
+              { path: 'incidents', component: () => import('@/views/Human/Grider/Media/Incidents') },
+              { path: 'incident', component: () => import('@/views/Human/Grider/Media/Incident') }
             ]
           },
         ]
@@ -141,14 +142,8 @@ const routes = [
             component: () => import('@/views/Thing/AI'),
             redirect: '/thing/ai/idex',
             children: [
-              {
-                path: "/thing/ai/idex",
-                component: () => import('@/views/Thing/AI/Idex'),
-              },
-              {
-                path: "/thing/ai/idex/incidents",
-                component: () => import('@/views/Thing/AI/Incidents')
-              }
+              { path: "/thing/ai/idex", component: () => import('@/views/Thing/AI/Idex') },
+              { path: "/thing/ai/incidents", component: () => import('@/views/Thing/AI/Incidents') }
             ]
           },
         ]

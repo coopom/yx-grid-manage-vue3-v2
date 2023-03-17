@@ -7,8 +7,6 @@
 <script setup>
 import AppProvider from "@/components/AppProvider";
 
-
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

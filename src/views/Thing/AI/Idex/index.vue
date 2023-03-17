@@ -15,8 +15,8 @@
                     <div v-for="item in list" class="yx-table-tr">
                         <div class="yx-table-td">{{ item.street }}</div>
                         <div class="yx-table-td">{{ item.community }}</div>
-                        <div @click="handleClick(item)" class="yx-table-td">{{ item.cg }}</div>
-                        <div @click="handleClick(item)" class="yx-table-td">{{ item.xf }}</div>
+                        <div class="yx-table-td">{{ item.cg }}</div>
+                        <div class="yx-table-td">{{ item.xf }}</div>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,6 @@
 <script setup>
 import { onMounted, reactive } from 'vue';
 import { Incident } from "@/api/modules"
-import { useRoute, useRouter } from "vue-router"
-
-const route = useRoute();
-const router = useRouter();
 
 const search = reactive({
     in_date: null
@@ -51,15 +47,7 @@ const asyncGetList = async () => {
 
 onMounted(() => {
     asyncGetList();
-});
-
-const handleClick = (data) => {
-    console.log("data:", data);
-    router.push({
-        path: "/thing/ai/idex/incidents",
-        query: route.query
-    })
-}
+})
 
 </script>
 
@@ -133,8 +121,7 @@ const handleClick = (data) => {
             border-right: 0px;
         }
 
-        &:nth-child(3),
-        &:nth-child(4) {
+        &:nth-child(3), &:nth-child(4) {
             &:hover {
                 /* background-color: rgba(41, 120, 253, 0.50); */
                 cursor: pointer;
@@ -165,5 +152,4 @@ const handleClick = (data) => {
         flex: 1;
         overflow: auto;
     }
-}
-</style>
+}</style>
